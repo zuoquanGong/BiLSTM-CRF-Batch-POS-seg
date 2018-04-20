@@ -63,7 +63,7 @@ class ModelLoader:
                 tmp_result=model_item(tmp_result,data)
             predict_labels=self.model_list[-1].predict(tmp_result,data)
         else:
-            predict_labels=self.model_list[0](data)
+            predict_labels=self.model_list[0].predict(data)
         return predict_labels
     
     def clear_grads(self):
