@@ -46,14 +46,15 @@ class ModelParams:
         
         #1.模型（用于模型载入函数--model_loader）
         self.modelPath=os.getcwd().replace('\\','/')+'/train_eval/model/'
-        self.modelNum = 2#载入的模型数**
-        #self.modelList = ['BiLSTMBatch','CRFBatch']#模型名称列表（按构造顺序）**
-        self.modelList = []
-        self.modelDefaultList = [f[:-3] for f in os.listdir(self.modelPath) if f!='modelloader.py' and f[0]!='_']
+        self.modelList = ['BiLSTMBatch','CRFBatch']#模型名称列表（按构造顺序）**
+        self.modelNum = len(self.modelList)#载入的模型数**
+        #self.modelList = []
+        #self.modelDefaultList = [f[:-3] for f in os.listdir(self.modelPath) if f!='modelloader.py' and f[0]!='_']
         #注：第一个模型必须提供embedding接口，最后一个模型必须提供预测函数
         
-        if self.modelList == []:
-            self.modelList=self.modelDefaultList#加载默认模型
+        #if self.modelList == []:
+        #    self.modelList=self.modelDefaultList#加载默认模型
+		#默认的 模型加载 可能导致 模型加载 顺序 的差异，所以放弃此方案
         
         #2.预处理
         self.pretrain=None
