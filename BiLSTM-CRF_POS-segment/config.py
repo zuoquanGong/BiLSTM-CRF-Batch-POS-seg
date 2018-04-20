@@ -54,7 +54,7 @@ class ModelParams:
         
         #if self.modelList == []:
         #    self.modelList=self.modelDefaultList#加载默认模型
-		#默认的 模型加载 可能导致 模型加载 顺序 的差异，所以放弃此方案
+	#默认的 模型加载 可能导致 模型加载 顺序 的差异，所以放弃此方案
         
         #2.预处理
         self.pretrain=None
